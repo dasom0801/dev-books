@@ -8,13 +8,13 @@ enum ButtonTypes {
 type ButtonProps = {
   title: string;
   onPress: () => void;
-  buttonType: ButtonTypes;
+  buttonType?: ButtonTypes;
   buttonStyle?: { [key: string]: any };
 };
 
 const Colors = {
-  [ButtonTypes.NUMBER]: ['#71717a', '#f59e0b'],
-  [ButtonTypes.OPERATOR]: ['#3f3f46', '#b45309'],
+  NUMBER: ['#71717a', '#3f3f46'],
+  OPERATOR: ['#f59e0b', '#b45309'],
 };
 
 const Button = ({
