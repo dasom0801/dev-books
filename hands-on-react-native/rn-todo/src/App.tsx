@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import SignInScreen from './screens/SignInScreen';
+import { WHITE } from './colors';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <Text style={{ fontSize: 30 }}>TODO App</Text>
+      <SignInScreen />
     </View>
   );
 };
@@ -13,7 +15,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: WHITE,
   },
 });
 
