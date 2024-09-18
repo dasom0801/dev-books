@@ -6,7 +6,9 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -15,9 +17,7 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "react",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommneded"
+    "react"
   ],
   "rules": {
     "no-console": "warn"
