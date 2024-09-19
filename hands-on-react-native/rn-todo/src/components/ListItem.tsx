@@ -4,18 +4,25 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { BLACK, DANGER, GRAY, PRIMARY } from '../colors';
 
 type TodoType = {
-  id: number;
+  id: string;
   task: string;
   isDone: boolean;
 };
 
 type ListItemProps = {
   item: TodoType;
+  onDelete: (id: string) => void;
+  onToggle: (id: string) => void;
 };
-const ListItem = memo(({ item }: ListItemProps) => {
+const ListItem = memo(({ item, onDelete, onToggle }: ListItemProps) => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => {}} hitSlop={10}>
+      <Pressable
+        onPress={() => {
+          onToggle(item.id);
+        }}
+        hitSlop={10}
+      >
         <MaterialCommunityIcons
           name={item.isDone ? 'checkbox-marked' : 'checkbox-blank-outline'}
           color={item.isDone ? PRIMARY.DEFAULT : BLACK}
@@ -25,7 +32,12 @@ const ListItem = memo(({ item }: ListItemProps) => {
       <View style={styles.task}>
         <Text style={item.isDone && { color: GRAY.DEFAULT }}>{item.task}</Text>
       </View>
-      <Pressable onPress={() => {}} hitSlop={10}>
+      <Pressable
+        onPress={() => {
+          onDelete(item.id);
+        }}
+        hitSlop={10}
+      >
         <MaterialCommunityIcons
           name="trash-can"
           size={20}
